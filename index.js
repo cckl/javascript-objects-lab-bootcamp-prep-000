@@ -1,4 +1,33 @@
 var recipes = {
+  carrots: "1 cup",
+  peppers: "3 cups",
+  corn: "1 cup"
+}
+
+function updateObjectWithKeyAndValue(recipes, key, value) {
+  return Object.assign({}, recipes, {[key]: value})
+}
+
+function destructivelyUpdateObjectWithKeyAndValue(recipes, key, value) {
+  return Object.assign(recipes, {[key]: value})
+}
+
+function deleteFromObjectByKey(object, key) {
+  var newRecipes = Object.assign({}, recipes)
+  delete newRecipes.key
+  return recipes
+}
+
+
+function destructivelyDeleteFromObjectByKey(object, key) {
+  delete object[key]
+  return recipes
+} 
+
+
+
+
+/* var recipes = {
   prop: 1,
   milk: "1 cup",
   butter: "stick"
@@ -20,6 +49,6 @@ function deleteFromObjectByKey(key, value) {
 }
 
 function destructivelyDeleteFromObjectByKey(recipes, key) {
-  delete recipes.prop
+  delete recipes.key
   return Object.assign(recipes)
-}
+}  */
